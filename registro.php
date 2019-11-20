@@ -1,6 +1,26 @@
 <?php 
-	include_once('./template/header.php')
+	require_once($_SERVER['DOCUMENT_ROOT'].'/template/header.php');
 ?>
+<seccion class="messages text-center">
+	<?php if(isset($_GET['error'])):
+		switch($_GET['error']) {
+			case 1:
+				$msg = 'Error al intentar guardar los datos del usuario';
+				break;
+			case 2:
+				$msg = 'Error inesperado favor de volver a intentar';
+				break;
+		}
+	?>
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+	  <?php echo $msg ?>
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+	<?php endif; ?>
+
+</seccion>
 <main class="content-login">
 	<section class="login">
 		<div class="login__logo">
