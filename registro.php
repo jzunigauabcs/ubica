@@ -14,7 +14,7 @@
 				    <label for="exampleFormControlFile1">Agregar imagen</label>
 				    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="picture">
 				  </div>
-				<button class="btn btn-success btn-block mb-4">Registrarse</button>
+				<button class="btn btn-success btn-block mb-4" name="btnRegister">Registrarse</button>
 				<input type="hidden" name="register">
 			</form>
 		</div>

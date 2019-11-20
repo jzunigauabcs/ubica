@@ -7,10 +7,10 @@
 			<h1>UBIKT</h1>
 		</div>
 		<div class="login__form">
-			<form action="" method="POST">
+			<form action="usuarioController.php" method="POST">
 				<input class="form-control mb-4" type="text" placeholder="email">
 				<input class="form-control mb-4" type="password" placeholder="password">
-				<button class="btn btn-primary btn-block mb-4">Iniciar sesión</button>
+				<button class="btn btn-primary btn-block mb-4" name="btnLogin">Iniciar sesión</button>
 				<input type="hidden" name="login">
 			</form>
 		</div>
