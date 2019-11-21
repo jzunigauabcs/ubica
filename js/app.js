@@ -5,7 +5,7 @@
 			container: 'map',
 			style: 'mapbox://styles/mapbox/streets-v11',
 			center: [-110.316120, 24.102782], 
-			zoom: 14,
+			zoom: 15,
 		})
 		let marker = undefined;
 
@@ -35,6 +35,7 @@
 				url: 'marcaController.php',
 			})
 			.done(function(data){
+				debugger
 				data.markers.forEach(function(m) {
 					new mapboxgl.Marker()
 					.setLngLat({lat: m.lat, lng: m.lng})

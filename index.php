@@ -4,7 +4,7 @@
 <seccion class="messages text-center">
 	<?php if(isset($_GET['status'])):
 		$msg = '';
-		$msg = 'primary';
+		$class = 'primary';
 		switch($_GET['status']) {
 			case 1:
 				$msg = 'Cuenta creada exitósamente';

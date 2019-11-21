@@ -39,8 +39,8 @@ class Usuario {
 			$dbh= $db->getConnection();
 			$query = "SELECT * FROM " . self::TABLE . " WHERE email = :email";
 			$stm = $dbh->prepare($query);
-			$stm->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Usuario');
 			$stm->bindParam(':email', $email);
+			$stm->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Usuario');
 			$stm->execute();
 			
 			if($usuario=$stm->fetch())
@@ -48,8 +48,6 @@ class Usuario {
 			return null;
 
 		}catch(PDOException $e) {
-			echo $e->getMessage();
-			die();
 			return null;
 		}
 	}

@@ -10,7 +10,7 @@ session_start();
 				$fileNameParts = explode('.',$fileName);
 				$fileExt = strtolower(end($fileNameParts));
 				$newFileName = md5(time() . $fileName) . '.' . $fileExt;
-				print_r($newFileName);
+			
 				$uploadPath = './images/';
 				$destPath = $uploadPath .$newFileName;
 				if(move_uploaded_file($fileTmpPath, $destPath)) {
