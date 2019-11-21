@@ -1,4 +1,5 @@
 <?php 
+session_start();
 	if($_SERVER['REQUEST_METHOD'] === 'POST') {
 		require_once($_SERVER['DOCUMENT_ROOT'].'/models/Usuario.php');
 		if(isset($_POST['register'])) {
@@ -21,8 +22,7 @@
 					if($rowCount === 1) 
 						header('location:index.php?status=1');
 					else
-						header('location:registro.php?error=2');
-
+						header('location:registro.php?status=-2');
 				}
 
 			}catch(PDOException $e) {
@@ -33,7 +33,16 @@
 			}
 		} else if(isset($_POST['login'])) {
 			$usuario = Usuario::findByEmail($_POST['email']);
-			var_dump($usuario);
+			if(!is_null($usuario) && compare_password($_POST['password'], $usuario->password)) {
+				$_SESSION['user'] = array('email' => $usuario->email, 'picture' => $usuario->picture);
+				header('location:home.php');
+			} else {
+				header('location:index.php?status=-1');
+			}
 		}
+	}
+
+	function compare_password($pass, $hash) {
+		return sha1($pass) === $hash;
 	}
  ?>

@@ -10,6 +10,10 @@
 				$msg = 'Cuenta creada exitósamente';
 				$class = 'success';
 				break;
+			case -1:
+				$msg = 'Usurio o contraseña incorrectos';
+				$class = 'danger';
+				break;
 		}
 	?>
 	<div class="alert alert-<?php echo $class;?> alert-dismissible fade show" role="alert">
