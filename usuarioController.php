@@ -34,7 +34,7 @@ session_start();
 		} else if(isset($_POST['login'])) {
 			$usuario = Usuario::findByEmail($_POST['email']);
 			if(!is_null($usuario) && compare_password($_POST['password'], $usuario->password)) {
-				$_SESSION['user'] = array('email' => $usuario->email, 'picture' => $usuario->picture);
+				$_SESSION['user'] = array('id' => $usuario->id, 'email' => $usuario->email, 'picture' => $usuario->picture);
 				header('location:home.php');
 			} else {
 				header('location:index.php?status=-1');

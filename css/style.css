@@ -35,6 +35,13 @@ body {
 	height: 100vh;
 	position: relative;
 }
+.messages {
+	position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    z-index: 100001;
+}
 #map { 
 	position:absolute; 
 	top:0; 
@@ -42,4 +49,16 @@ body {
 	left: 0;
 	right: 0;
 	width:100%; 
+}
+.formMark {
+	background-color: #ffffff;
+	padding-top: 70px;
+	padding-left: 10px;
+	padding-right: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 350px;
+    z-index: 1000;
 }

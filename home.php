@@ -12,11 +12,15 @@
 		$msg = 'primary';
 		switch($_GET['status']) {
 			case 1:
-				$msg = 'Cuenta creada exitósamente';
+				$msg = 'Marca creada exitósamente';
 				$class = 'success';
 				break;
 			case -1:
-				$msg = 'Usurio o contraseña incorrectos';
+				$msg = 'Ocurrió un error al intentar guardar las marcas';
+				$class = 'danger';
+				break;
+			case -2:
+				$msg = 'Ocurrió un error inesperado';
 				$class = 'danger';
 				break;
 		}
@@ -51,6 +55,13 @@
 			<div class="col-12 mapContainer">
 				<div id='map'></div>
 			</div>
+		</div>
+		<div class="formMark">
+			<form action="marcaController.php" method="POST">
+				<input type="text" placeholder="Latitud" id="lat" class="form-control mb-3" name="lat">
+				<input type="text" placeholder="Longitud" id="lng" class="form-control mb-3" name="lng">
+				<button class="btn btn-success btn-block" name="btnSave">Guardar</button>
+			</form>
 		</div>
 	</section>
 </main>
