@@ -44,7 +44,8 @@
 			</div>
 			<div class="col-6 d-flex justify-content-end align-items-center">
 				<img src="<?php echo $imgPath.$user['picture']; ?>" alt="" class="imgProfile mr-2">
-				<span><?php echo $user['email']; ?></span>
+				<span class="mr-4"><?php echo $user['email']; ?></span>
+				<a href="logout.php" class="text-white">Cerrar sesión</a>
 			</div>
 		</div>
 	</div>
